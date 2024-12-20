@@ -1,0 +1,189 @@
+/* Fredoka Font */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Fredoka:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Fredoka", sans-serif;
+    background-image: url("./images/bg_image.jpg");
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100dvh;
+}
+
+.card-wrapper {
+    position: relative;
+}
+
+.card {
+    position: relative;
+    filter: drop-shadow(0 0 5px #00234fca);
+}
+
+.card-image-with-svg-mask {
+    width: 80dvw;
+    height: 80dvh;
+    background-image: url("./images/maker_image.jpg");
+    background-position: 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    border-top-left-radius: 2.5rem;
+    border-top-right-radius: 2.5rem;
+    border-bottom-left-radius: 2.5rem;
+    position: relative;
+}
+
+.card-image-with-svg-mask {
+    -webkit-mask: url("./svg_mask/mask__top-center.svg") center / contain no-repeat, url("./svg_mask/mask__bottom-left.svg") center / contain no-repeat, linear-gradient(#000000 0 0);
+    mask-size: 22rem, 30rem;
+    /* this work but I want to test the other one in real life */
+    /* mask-position: 50% -0.1%, 100.1% 100.19%; */
+    mask-position: top center, bottom right;
+    mask-composite: exclude;
+}
+
+p.text {
+    color: #ffff;
+    width: 350px;
+    position: absolute;
+    right: 5%;
+    top: 2%;
+    font-size: 20px;
+    line-height: 1.5
+}
+
+.button {
+    position: absolute;
+    background-color: #00234f;
+    border-radius: 1.5rem;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 35, 79, 0.3);
+}
+
+.top-center {
+    width: 240px;
+    height: 105px;
+    top: 1%;
+    right: 0%;
+    left: 0%;
+    margin: 0 auto;
+}
+
+.top-center .text {
+    font-size: 34px;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: url("./images/bg_image.jpg") top / cover no-repeat;
+    background-clip: text;
+    color: transparent;
+}
+
+.bottom-right {
+    width: 420px;
+    height: 140px;
+    border-radius: 2.5rem;
+    bottom: 2%;
+    right: 0.5%;
+}
+
+.bottom-right .text {
+    font-size: 19px;
+    text-align: center;
+    position: relative;
+    color: #fff;
+}
+
+.fa-quote-left, .fa-quote-right {
+    position: absolute;
+    font-size: 40px;
+    color: rgb(245, 245, 245);
+}
+
+.fa-quote-left {
+    top: -35px;
+    left: -10px;
+}
+
+.fa-quote-right {
+    bottom: -35px;
+    right: -10px;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    p.text {
+        width: 90%;
+        right: 5%;
+        font-size: 16px;
+    }
+
+    .button.top-center {
+        width: 200px;
+        height: 90px;
+    }
+
+    .top-center .text {
+        font-size: 28px;
+    }
+
+    .button.bottom-right {
+        width: 340px;
+        height: 120px;
+    }
+
+    .bottom-right .text {
+        font-size: 16px;
+    }
+
+    .fa-quote-left, .fa-quote-right {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card-image-with-svg-mask {
+        mask-size: 18rem, 25rem;
+    }
+
+    .button.top-center {
+        width: 160px;
+        height: 80px;
+    }
+
+    .top-center .text {
+        font-size: 24px;
+    }
+
+    .button.bottom-right {
+        width: 280px;
+        height: 100px;
+        bottom: 1%;
+    }
+
+    .bottom-right .text {
+        font-size: 14px;
+    }
+
+    .fa-quote-left, .fa-quote-right {
+        font-size: 28px;
+    }
+}
